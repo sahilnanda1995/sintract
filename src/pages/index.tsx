@@ -22,8 +22,9 @@ import ModalContractInput from "../components/ModalContractInfo";
 
 export default function Home() {
   const [hasMounted, setHasMounted] = useState(false);
+  const { address, isConnected } = useAccount();
   const { chain } = useNetwork();
-  const { isConnected } = useAccount();
+
   const [contractAddr, setContractAddr] = useState<undefined | string>();
   const [contractABI, setContractABI] = useState<any>();
   const [savedContractInfo, setSavedContractInfo] = useLocalStorage(
@@ -86,6 +87,17 @@ export default function Home() {
   }, []);
 
   // useEffect(() => {
+  //   async function getContractCode() {
+  //     const code = await provider.getCode(contractAddr);
+  //     console.log("contract code");
+  //     console.log(code);
+  //   }
+  //   if (provider && contractAddr) {
+  //     getContractCode();
+  //   }
+  // }, [contractAddr, provider]);
+
+  // useEffect(() => {
   //   setContractABI(exampleAbi);
   // }, []);
 
@@ -94,8 +106,17 @@ export default function Home() {
     return null;
   }
 
-  console.log("contractABI");
-  console.log(contractABI);
+  // console.log("contractABI");
+  // console.log(contractABI);
+
+  // console.log("contractAddr");
+  // console.log(contractAddr);
+
+  // console.log("contractInstance");
+  // console.log(contractInstance?.address);
+  // console.log(contractInstance?.provider);
+
+  // console.log(contractInstance?.provider);
 
   return (
     <div>
@@ -128,7 +149,11 @@ export default function Home() {
             Smart Contract Interactor
           </h1> */}
           <ProductDetails />
-          <ConnectWallet />
+          <ConnectWallet
+            isConnected={isConnected}
+            chain={chain}
+            address={address}
+          />
           {isConnected && (
             <ContractData
               contractAddr={contractAddr}
@@ -186,9 +211,7 @@ export default function Home() {
   );
 }
 
-function ConnectWallet() {
-  const { address, isConnected } = useAccount();
-  const { chain } = useNetwork();
+function ConnectWallet({ isConnected, chain, address }) {
   const { connect } = useConnect({
     connector: new InjectedConnector(),
   });
@@ -345,6 +368,8 @@ function CallCardContractRead({
 }
 
 function ContractRead({ args, contractAddr, name, setIsEnabled, contractABI }) {
+  // console.log("name");
+  // console.log(name);
   useContractRead({
     abi: contractABI,
     address: contractAddr,

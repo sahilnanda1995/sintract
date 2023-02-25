@@ -2,14 +2,14 @@ import React from "react";
 
 import { AppProps } from "next/app";
 import { WagmiConfig, createClient, configureChains } from "wagmi";
-import { mainnet, polygon, optimism } from "wagmi/chains";
+import { mainnet, polygon, optimism, polygonMumbai } from "wagmi/chains";
 import { publicProvider } from "wagmi/providers/public";
 
 import "../styles/tailwind.scss";
 import { moonbase, moonbeam, moonriver } from "../networksInfo";
 
 const { provider, webSocketProvider } = configureChains(
-  [moonbase, moonbeam, moonriver, mainnet, polygon, optimism],
+  [moonbase, moonbeam, moonriver, mainnet, polygon, optimism, polygonMumbai],
   [publicProvider()]
 );
 
