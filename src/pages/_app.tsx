@@ -9,6 +9,7 @@ import {
   polygonMumbai,
   arbitrumGoerli,
   optimismGoerli,
+  arbitrum,
 } from "wagmi/chains";
 import { publicProvider } from "wagmi/providers/public";
 
@@ -27,6 +28,7 @@ const { provider, webSocketProvider } = configureChains(
     arbitrumGoerli,
     goerli,
     optimismGoerli,
+    arbitrum,
   ],
   [publicProvider()]
 );
