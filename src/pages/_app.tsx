@@ -1,13 +1,14 @@
 import React from "react";
 
 import { AppProps } from "next/app";
-import { WagmiConfig, createClient, configureChains } from "wagmi";
+import { WagmiConfig, createClient, configureChains, goerli } from "wagmi";
 import {
   mainnet,
   polygon,
   optimism,
   polygonMumbai,
   arbitrumGoerli,
+  optimismGoerli,
 } from "wagmi/chains";
 import { publicProvider } from "wagmi/providers/public";
 
@@ -24,6 +25,8 @@ const { provider, webSocketProvider } = configureChains(
     optimism,
     polygonMumbai,
     arbitrumGoerli,
+    goerli,
+    optimismGoerli,
   ],
   [publicProvider()]
 );
