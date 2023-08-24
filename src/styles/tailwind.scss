@@ -9,3 +9,10 @@
 html {
   @apply antialiased;
 }
+
+@layer base {
+  @font-face {
+    font-family: "Archivo_SemiExpanded";
+    src: url(/fonts/Archivo_SemiExpanded-Regular.woff2) format("woff2");
+  }
+}

@@ -15,6 +15,7 @@ import { publicProvider } from "wagmi/providers/public";
 
 import "../styles/tailwind.scss";
 import { moonbase, moonbeam, moonriver } from "../networksInfo";
+import { astar } from "../networksInfo";
 
 const { provider, webSocketProvider } = configureChains(
   [
@@ -29,6 +30,7 @@ const { provider, webSocketProvider } = configureChains(
     goerli,
     optimismGoerli,
     arbitrum,
+    astar,
   ],
   [publicProvider()]
 );

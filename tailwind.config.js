@@ -9,6 +9,8 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ["Inter", ...defaultTheme.fontFamily.sans],
+        mono: ["JetBrainsMono", "menlo", ...defaultTheme.fontFamily.mono],
+        archivosemi: ["Archivo_SemiExpanded"],
       },
     },
   },

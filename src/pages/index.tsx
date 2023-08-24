@@ -790,10 +790,10 @@ function SubmitButtonWriteContract({
 function ProductDetails() {
   return (
     <div className="flex flex-col items-center justify-center">
-      <h2 className="text-4xl font-bold tracking-tight text-cyan-500 sm:text-6xl">
+      <h2 className="font-sans text-4xl font-bold tracking-tight text-cyan-500 sm:text-6xl">
         Sintract
       </h2>
-      <p className="mt-2 text-xl font-semibold text-white sm:text-2xl">
+      <p className="mt-2 font-mono text-xl font-semibold text-white sm:text-2xl">
         Interact with your deployed <br />
         smart contracts
       </p>
