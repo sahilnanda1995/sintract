@@ -1,4 +1,4 @@
-import { Chain } from "wagmi";
+import { Address, Chain } from "wagmi";
 
 export const moonbase: Chain = {
   id: 1287,
